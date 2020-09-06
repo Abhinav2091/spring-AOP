@@ -3,32 +3,34 @@ package com.luv2code.aopdemo.aspect;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
+@Order(-2)
 public class AspectForPointCutDeclaration {
 
 	//create a point cut once and use it in multiple Advices
 	
 	@Pointcut("execution(public * doWork())")
-	private void reusePointCutDeclaration() {}
+	public void reusePointCutDeclaration() {}
 	
 	//point cut for every Method
 	@Pointcut("execution(* *.*(..))")
-	private void reusePointCutDeclarationforEveryMethod() {}
+	public void reusePointCutDeclarationforEveryMethod() {}
 	
 	//point cut for getter
 	@Pointcut("execution(* *.get*(..))")
-	private void reusePointCutDeclarationforGetterMethod() {}
+	public void reusePointCutDeclarationforGetterMethod() {}
 	
 	//point cut for setter method
 	@Pointcut("execution(* *.set*(..))")
-	private void reusePointCutDeclarationforSetterMethod() {}
+	public void reusePointCutDeclarationforSetterMethod() {}
 	
 	//exclude getter and setter point cut
 	@Pointcut("reusePointCutDeclarationforEveryMethod() && !(reusePointCutDeclarationforGetterMethod() || reusePointCutDeclarationforSetterMethod())")
-	private void pointCutDeclarationforExcludingSetterAndGetterMethod() {}
+	public void pointCutDeclarationforExcludingSetterAndGetterMethod() {}
 	
 	//use method name
 	@Before("reusePointCutDeclaration()")

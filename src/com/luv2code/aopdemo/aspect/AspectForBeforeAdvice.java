@@ -60,7 +60,7 @@ public class AspectForBeforeAdvice {
 	
 	@Before("execution(* com.luv2code.aopdemo.dao.*.*(..))")
 	public void beforeAdviceforAnyNumberOfArgumentInGivenPackage() {
-		System.out.println("beforeAdviceforAnyNumberOfArgumentInGivenPackage");
+		System.out.println("-------beforeAdviceforAnyNumberOfArgumentInGivenPackage---------");
 	}
 	
 
