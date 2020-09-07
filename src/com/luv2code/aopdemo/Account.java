@@ -5,6 +5,16 @@ public class Account {
 	private String name;
 	private int accNo;
 
+	public Account() {
+		
+	}
+	
+	public Account(String name, int accNo) {
+		super();
+		this.name = name;
+		this.accNo = accNo;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -21,4 +31,11 @@ public class Account {
 		this.accNo = accNo;
 	}
 
+	@Override
+	public String toString() {
+		return "Account [name=" + name + ", accNo=" + accNo + "]";
+	}
+
+	
+	
 }

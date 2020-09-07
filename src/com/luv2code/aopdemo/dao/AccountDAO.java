@@ -1,5 +1,8 @@
 package com.luv2code.aopdemo.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import com.luv2code.aopdemo.Account;
@@ -39,5 +42,22 @@ public class AccountDAO {
 	public boolean doWork() {
 		System.out.println("doWork::Method::::" + getClass());
 		return false;
+	}
+	
+	public List<Account> findAccount()
+	{
+		List<Account> accountList = new ArrayList<>();
+		
+		accountList.add(new Account("Abhinav",1));
+		accountList.add(new Account("Aju",2));
+		accountList.add(new Account("Ajay",3));
+		accountList.add(new Account("Himanshu",4));
+		
+		//for After Throwing
+//		if(!accountList.isEmpty())
+//		throw new ArrayIndexOutOfBoundsException("Just a test Exception.");
+		
+		return accountList;
+		
 	}
 }
